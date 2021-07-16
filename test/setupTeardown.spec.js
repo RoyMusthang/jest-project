@@ -1,11 +1,12 @@
 const adventure = require('../src/setupTeardown');
 /*
-Num universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
-O grupo parte em direção ao sucesso, mas,
-devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
+Para universo não tão distante, um grupo de aventureiros da Trybe enfrentam uma série de testes.
+indo grupo parte em direção ao sucesso, mas,
+com devido a ameaça de criaturas temíveis, o grupo não chegará inteiro ao fim.
 Após cada aventura um de nossos aventureiros cairá.
-Cada um dos testes abaixo verifica a quantidade de aventureiros após cada iteração.
-Sua missão aqui é:
+Nos testes abaixo verifica a quantidade de aventureiros após cada iteração.
+Ha Sua missão aqui é
+Aparentimente:
 
   - Use a função randomAttack do objeto adventure
   que remove um dos aventureiros toda vez que é chamada,
@@ -20,7 +21,15 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('quem sobreviveu?', () => {
-  // Adicione seu código aqui
+  beforeEach(() => {
+    adventure.randomAttack();
+  });
+
+  afterAll(() => {
+    const adventure1 = `it's good to eat ${adventure.specialists[0].nome}, `;
+    const adventure2 = `the ${adventure.specialists[0].classe}`;
+    console.log(adventure1 + adventure2);
+  });
 
   test('depois da primeira aventura', () => {
     expect(adventure.specialists.length).toBe(5);
